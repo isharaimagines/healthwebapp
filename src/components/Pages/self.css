@@ -1,0 +1,208 @@
+/*------------------- fonts -----------------*/
+@font-face {
+  font-family: "FS Albert Extra Bold";
+  src: url("./fonts/FSAlbertWeb-ExtraBold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Merriweather;
+  src: url("./fonts/merriweather-v11-latin-regular.woff2") format("woff2");
+  font-display: swap;
+}
+/*------------------- fonts -----------------*/
+
+:root {
+  --gradient-color: linear-gradient(90deg, #0bd290, #14ff9d);
+  --black-color: #0d0e12;
+  --reflection-color: rgba(246, 245, 238, 0.3);
+  --body-color: #fffdf5;
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.boody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.container-card {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 20px;
+}
+
+.container-card .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 20px 20px 20px;
+  margin: 10px;
+  width: 55%;
+  border-radius: 8px;
+  background: var(--body-color);
+  height: 100%;
+}
+.container-card .menus {
+  position: relative;
+  width: 24%;
+  height: 100%;
+}
+.container-card .menus .steps {
+  position: fixed;
+  top: 150px;
+}
+.container-card .menus .scrolled-class {
+  display: none;
+}
+.container-card .menus .steps ol {
+  /*flex-direction: column; */
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
+  border-radius: 8px;
+  /* display: flex; */
+  font-size: 20px;
+  background: #edfbfc;
+  width: 400px;
+  height: auto;
+  padding: 20px 20px 30px 40px;
+  text-align: left;
+}
+.container-card .menus .steps ol li a {
+  color: #000;
+  font-family: Merriweather, Verdana, Arial, serif;
+  font-size: 20px;
+}
+.container-card .menus .steps ol li:hover,
+.container-card .menus .steps ol li a:hover {
+  color: crimson;
+}
+.container-card .menus .steps ol li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.container-card .menus .steps ol span {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "FS Albert Extra Bold", Helvetica, Arial, sans-serif;
+}
+.container-card .card span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "FS Albert Extra Bold", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  color: #257f69;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-right: 0.3125rem;
+}
+.container-card .card .Name {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container-card .card .Name .center {
+  position: relative;
+  width: 40%;
+  height: 250px;
+  margin: 10px;
+}
+.container-card .card .Name .center img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.container-card .card .Name h1 {
+  font-family: "FS Albert Extra Bold", Helvetica, Arial, sans-serif;
+  padding: 10px;
+  margin-top: 5px;
+  text-align: left;
+  font-size: 3.25rem;
+}
+.container-card .card .Name div h1 {
+  margin-top: 100px;
+}
+.container-card .card .Name ul {
+  text-align: left;
+  padding: 10px 25px 10px 25px;
+  border: 2px dashed #000;
+  list-style: none;
+}
+.container-card .card .Name ul li {
+  list-style-type: "💠";
+  line-height: 1.5625;
+  font-family: Merriweather, Verdana, Arial, serif;
+  font-size: 1rem;
+  text-align: justify;
+}
+.container-card .card .Name ul li li {
+  list-style-type: none;
+  line-height: 1.5625;
+  font-family: Merriweather, Verdana, Arial, serif;
+  font-size: 1rem;
+}
+.container-card .card .Name ul li strong {
+  font-family: Merriweather, Verdana, Arial, serif;
+}
+
+@keyframes load89234 {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 577px),
+  (max-width: 992px) and (min-width: 769px),
+  (max-width: 576px),
+  (max-width: 1550px) and (min-width: 992px) {
+  .container-card {
+    flex-direction: column;
+  }
+  .container-card .card {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-card .card .Name {
+    width: 100%;
+    height: 40%;
+  }
+  .container-card .card .Name .center {
+    width: 55%;
+    height: 350px;
+  }
+  .container-card .menus {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  .container-card .menus .steps {
+    position: relative;
+    top: 50px;
+  }
+  .container-card .menus .steps ol {
+    width: 100%;
+  }
+  .container-card .card {
+    align-items: flex-start;
+  }
+}

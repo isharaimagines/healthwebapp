@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Kablammo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+  --gradient-color: linear-gradient(90deg, #0bd290, #14ff9d);
+  --black-color: #0d0e12;
+  --reflection-color: rgba(246, 245, 238, 0.3);
+  --body-color: #fffdf5;
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background: #0f151d;
+}
+.navibar {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+.navibar .header {
+  position: relative;
+  width: 80%;
+  height: 70px;
+  background: rgba(187, 187, 187, 0.466);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    90deg,
+    #00111c,
+    #001523,
+    #001a2c,
+    #002137,
+    #00253e,
+    #002945,
+    #002e4e,
+    #003356,
+    #003a61,
+    #00406c
+  );
+  z-index: 1000;
+}
+.navibar .header .logo {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin-top: 8px;
+}
+.navibar .header .logo h1 {
+  color: #0bd290;
+}
+.navibar .header .logo h5 {
+  color: #dedfdf;
+}
+.navibar .header nav .logo {
+  display: none;
+}
+.navibar .header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.navibar .header nav ul li a {
+  padding: 12px;
+  margin: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  font-weight: 600;
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  transform: 0.2s;
+  /* border-radius: 30px; */
+  position: relative;
+}
+.navibar .header nav ul ol a {
+  text-decoration: none;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: 2s ease-in-out;
+}
+.navibar .header nav ul li a:hover {
+  color: #04090c;
+  background: #f1f1f1;
+}
+.navibar .header nav ul li a.active {
+  color: #04090c;
+  background: #bcbdbd;
+}
+.navibar .header nav ul li a.active:hover {
+  background: #f1f1f1;
+}
+
+.navibar .header nav ul li a i.ri-arrow-left-line {
+  transition: 0.8s ease-in-out;
+}
+.navibar .header nav ul li a.active:hover i.ri-arrow-left-line {
+  transform: translateX(-5px);
+}
+
+.navibar .header nav ul ol a.signin {
+  text-align: center;
+  box-shadow: rgb(46 240 89 / 40%) 0px 4px, rgb(46 240 87 / 30%) 0px 8px,
+    rgb(46 240 97 / 20%) 0px 12px, rgb(46 240 182 / 10%) 0px 16px,
+    rgb(46 240 82 / 5%) 0px 20px;
+  transform: translateY(-3px);
+  background: #0bd290;
+  padding: 12px;
+  transition: all 0.8s ease-in-out;
+}
+
+.navibar .header nav ul ol a.button {
+  position: relative;
+  transition: transform 0.4s;
+}
+
+.navibar .header nav ul ol a.button .button__content {
+  position: relative;
+  background: var(--gradient-color);
+  padding: 12px 24px;
+  border-radius: 4rem;
+  border: 2px solid var(--black-color);
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  overflow: hidden;
+}
+
+.navibar .header nav ul ol a.button .button__text {
+  font-weight: 700;
+}
+
+.navibar .header nav ul ol a.button .button__icon {
+  font-size: 1.5rem;
+}
+
+.navibar .header nav ul ol a.button .button__text,
+.navibar .header nav ul ol a.button .button__icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* Reflection shapes */
+.navibar .header nav ul ol a.button .button__reflection-1,
+.navibar .header nav ul ol a.button .button__reflection-2 {
+  width: 8px;
+  height: 120px;
+  background-color: var(--reflection-color);
+  rotate: 30deg;
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: -180%;
+  margin: auto;
+  transition: left 0.6s cubic-bezier(0.2, 0.5, 0.2, 1.2);
+}
+
+.navibar .header nav ul ol a.button .button__reflection-1::after {
+  content: "";
+  width: 26px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 1.25rem;
+}
+
+.navibar .header nav ul ol a.button .button__reflection-2::after {
+  content: "";
+  width: 40px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 0.8rem;
+}
+
+.navibar .header nav ul ol a.button .button__shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--gradient-color);
+  padding: 12px 24px;
+  border-radius: 4rem;
+  border: 2px solid var(--black-color);
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+/* View shadow gradient */
+.navibar .header nav ul ol a.button:hover .button__shadow {
+  transform: translate(-0.4rem, 0.4rem);
+}
+
+/* Move reflection */
+.navibar .header nav ul ol a.button:hover .button__reflection-1 {
+  left: 120%;
+}
+
+.navibar .header nav ul ol a.button:hover .button__reflection-2 {
+  left: -70%;
+}
+
+/* View geometric shapes */
+.navibar .header nav ul ol a.button:hover {
+  transform: rotate(-4deg) scale(1.1);
+}
+
+/*-------------------------------*/
+
+.navibar .header .myburge {
+  display: none;
+  height: fit-content;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.navibar .header .myburge:hover div {
+  background-color: #fdfdfd;
+}
+.navibar .header .myburge div {
+  width: 30px;
+  height: 3px;
+  margin: 6px 0;
+  background: #ffffff;
+}
+@media (max-width: 768px) and (min-width: 577px),
+  (max-width: 992px) and (min-width: 769px),
+  (max-width: 576px) {
+  .navibar .header {
+    width: 90%;
+    padding: 0 20px;
+  }
+  .navibar .header nav {
+    display: flex;
+    position: absolute;
+    left: -500px;
+    top: 0;
+    z-index: 999;
+    width: 360px;
+    height: 100vh;
+    background-image: linear-gradient(
+      90deg,
+      #00111c,
+      #001523,
+      #001a2c,
+      #002137,
+      #00253e,
+      #002945,
+      #002e4e,
+      #003356,
+      #003a61,
+      #00406c
+    );
+    transition: 0.2s;
+    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+  }
+  #nav_check:checked ~ nav {
+    left: 0;
+  }
+  .navibar .header nav .logo {
+    display: block;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+  }
+  .navibar .header nav ul {
+    display: block;
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+  .navibar .header nav ul li a {
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  .navibar .header nav ul ol {
+    padding: 8px;
+  }
+  .navibar .header .myburge {
+    display: block;
+  }
+  .navibar .header nav ul ol a.button .button__content {
+    width: 180px;
+  }
+  .navibar .header nav ul ol a.button .button__shadow {
+    width: 180px;
+  }
+}
