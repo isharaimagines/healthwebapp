@@ -15,7 +15,7 @@ const decryptData = (encryptedText) => {
   return decryptedData;
 };
 export const Psycho = () => {
-  const originalText = "G-GC268L8DBTs";
+  const originalText = "";
   const encryptedText = encryptData(originalText);
   const decryptedText = decryptData(encryptedText);
 
