@@ -1,19 +1,29 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import CryptoJS from "crypto-js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const secretPass = "~`!@#$%^&* ()_-+= { [}]|:;”‘.?/"; // donn't touch
+
+const secretData = (secretedText) => {
+  const bytes = CryptoJS.AES.decrypt(secretedText, secretPass);
+  const secretedData = bytes.toString(CryptoJS.enc.Utf8);
+  return secretedData;
+};
+
+const KEY1 = secretData(
+  "U2FsdGVkX1/GaJjWeLDUIpuGvRj51CvI1dYGo54QNLg09d/KJ9Y5kk4SUZ0PRlICxX41SqjwH9Tv0lQk9UhjXw=="
+);
+const KEY2 = secretData("U2FsdGVkX1/4ZXQU8Aprr3j6LZEoSaSRGbQSFMCWyUA=");
+const KEY3 = secretData("U2FsdGVkX1+09pDrA6o9gqDad8KK2xfTRBbiNi9L/jk=");
+
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: KEY1,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
   projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  messagingSenderId: KEY2,
   appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  measurementId: KEY3,
 };
 
 // Initialize Firebase
