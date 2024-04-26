@@ -93,6 +93,7 @@ a {
 .container-card .menus .steps ol li {
   margin-top: 8px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 .container-card .menus .steps ol span {
   font-size: 20px;

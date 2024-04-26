@@ -25,42 +25,67 @@ export const Child = () => {
     };
   }, []);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
+
   return (
-    <div className="boody">
+    <div className="boody" onClick={handleBodyClick}>
       <div className="container-card">
         <div className="menus">
           <div className={isScrolled ? "steps" : "steps"}>
             <ol>
               <span>Table of Contents</span>
               <li>
-                <a href="#1">Introduction</a>
+                <a onClick={() => scrollToSection("1")}>Introduction</a>
               </li>
               <li>
-                <a href="#2">Mental health determinants</a>
+                <a onClick={() => scrollToSection("2")}>
+                  Mental health determinants
+                </a>
               </li>
               <li>
-                <a href="#3">Emotional disorders</a>
+                <a onClick={() => scrollToSection("3")}>Emotional disorders</a>
               </li>
               <li>
-                <a href="#4">Behavioural disorders</a>
+                <a onClick={() => scrollToSection("4")}>
+                  Behavioural disorders
+                </a>
               </li>
               <li>
-                <a href="#5">Eating disorders</a>
+                <a onClick={() => scrollToSection("5")}>Eating disorders</a>
               </li>
               <li>
-                <a href="#6">Psychosis</a>
+                <a onClick={() => scrollToSection("6")}>Psychosis</a>
               </li>
               <li>
-                <a href="#7">Suicide and self-harm</a>
+                <a onClick={() => scrollToSection("7")}>
+                  Suicide and self-harm
+                </a>
               </li>
               <li>
-                <a href="#8">Risk-taking behaviours</a>
+                <a onClick={() => scrollToSection("8")}>
+                  Risk-taking behaviours
+                </a>
               </li>
               <li>
-                <a href="#9">Promotion and prevention</a>
+                <a onClick={() => scrollToSection("9")}>
+                  Promotion and prevention
+                </a>
               </li>
               <li>
-                <a href="#10">Early detection and treatment</a>
+                <a onClick={() => scrollToSection("10")}>
+                  Early detection and treatment
+                </a>
               </li>
             </ol>
           </div>

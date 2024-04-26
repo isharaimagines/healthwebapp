@@ -3,8 +3,13 @@ import "./footer.css";
 import logo from "../assets/img/my_logo.png";
 
 const Footer = () => {
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
   return (
-    <div className="footer">
+    <div className="footer" onClick={handleBodyClick}>
       <div className="container">
         <div className="align-items-center">
           <div className="col">

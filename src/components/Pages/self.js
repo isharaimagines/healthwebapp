@@ -24,27 +24,53 @@ export const Self = () => {
     };
   }, []);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
+
   return (
-    <div className="boody">
+    <div className="boody" onClick={handleBodyClick}>
       <div className="container-card">
         <div className="menus">
           <div className={isScrolled ? "steps" : "steps"}>
             <ol>
               <span>Table of Contents</span>
               <li>
-                <a href="#1">Talk to Someone You Trust</a>
+                <a onClick={() => scrollToSection("0")}>
+                  What is good mental health?
+                </a>
               </li>
               <li>
-                <a href="#2">Look After Your Physical Health</a>
+                <a onClick={() => scrollToSection("1")}>
+                  Talk to Someone You Trust
+                </a>
               </li>
               <li>
-                <a href="#3">Do Activities That You Enjoy</a>
+                <a onClick={() => scrollToSection("2")}>
+                  Look After Your Physical Health
+                </a>
               </li>
               <li>
-                <a href="#4">Steer Away From Harmful Substances</a>
+                <a onClick={() => scrollToSection("3")}>
+                  Do Activities That You Enjoy
+                </a>
               </li>
               <li>
-                <a href="#5">
+                <a onClick={() => scrollToSection("4")}>
+                  Steer Away From Harmful Substances
+                </a>
+              </li>
+              <li>
+                <a onClick={() => scrollToSection("5")}>
                   Take Two Minutes to Focus On The World Around You
                 </a>
               </li>
@@ -54,26 +80,28 @@ export const Self = () => {
         <div className="card">
           <span>HOME &#62; FOR YOURSELF </span>
           <div className="Name">
-            <h1>What is good mental health?</h1>
-            <ul>
-              <li>
-                Not only should we take care of our mental health when we are
-                having difficulties or when we are depressed, worried, or
-                stressed. As with our physical health, it's something we should
-                genuinely consider and care about deeply.
-              </li>
-              <li>
-                It benefits us now and in the future to take care of our mental
-                health since it will help us handle challenging situations. We
-                may experience a decreased likelihood of physical health issues
-                in the long run.
-              </li>
-              <li>
-                Our mental health and wellbeing can be maintained in many ways
-                on a daily basis; start by implementing these 5 highly
-                recommended strategies.
-              </li>
-            </ul>
+            <div id="0">
+              <h1>What is good mental health?</h1>
+              <ul>
+                <li>
+                  Not only should we take care of our mental health when we are
+                  having difficulties or when we are depressed, worried, or
+                  stressed. As with our physical health, it's something we
+                  should genuinely consider and care about deeply.
+                </li>
+                <li>
+                  It benefits us now and in the future to take care of our
+                  mental health since it will help us handle challenging
+                  situations. We may experience a decreased likelihood of
+                  physical health issues in the long run.
+                </li>
+                <li>
+                  Our mental health and wellbeing can be maintained in many ways
+                  on a daily basis; start by implementing these 5 highly
+                  recommended strategies.
+                </li>
+              </ul>
+            </div>
 
             <div id="1">
               <h1>Talk to Someone You Trust</h1>

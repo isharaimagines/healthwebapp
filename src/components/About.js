@@ -2,9 +2,14 @@ import "./about.css";
 import aboutimg from "../assets/img/team_about.png";
 
 export const About = () => {
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
   return (
     <>
-      <div className="section">
+      <div className="section" onClick={handleBodyClick}>
         <div className="all">
           <div className="main_banner">
             <div className="text_left">

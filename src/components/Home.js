@@ -7,15 +7,20 @@ import motivation_section from "../assets/img/motivation_section_banner.jpg";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
   return (
     <>
-      <div className="section">
+      <div className="section" onClick={handleBodyClick}>
         <div className="main_banner">
           <img src={wallpaper} alt="wallpapers" />
         </div>
       </div>
 
-      <div className="section">
+      <div className="section" onClick={handleBodyClick}>
         <div className="second_banner_text">
           <h1>Find the highest meaning in your activities</h1>
           <p>What type of therapy your are searching..</p>
@@ -65,7 +70,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className="section">
+      <div className="section" onClick={handleBodyClick}>
         <div className="third_banner">
           <div className="text">
             <span>OUR APPROACH</span>

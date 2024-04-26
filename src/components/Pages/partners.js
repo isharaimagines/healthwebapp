@@ -23,45 +23,69 @@ export const Partners = () => {
     };
   }, []);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
+
   return (
-    <div className="boody">
+    <div className="boody" onClick={handleBodyClick}>
       <div className="container-card">
         <div className="menus">
           <div className={isScrolled ? "steps" : "steps"}>
             <ol>
               <span>Table of Contents</span>
               <li>
-                <a href="#1">
+                <a onClick={() => scrollToSection("1")}>
                   Maintaining healthy relationships and mental wellbeing
                 </a>
               </li>
               <li>
-                <a href="#2">
+                <a onClick={() => scrollToSection("2")}>
                   Ways to build a healthy relationship with yourself
                 </a>
               </li>
               <li>
-                <a href="#3">Try positive thinking</a>
+                <a onClick={() => scrollToSection("3")}>
+                  Try positive thinking
+                </a>
               </li>
               <li>
-                <a href="#4">Ways to build healthy relationships with others</a>
+                <a onClick={() => scrollToSection("4")}>
+                  Ways to build healthy relationships with others
+                </a>
               </li>
               <li>
-                <a href="#5">Healthy ways to communicate in relationships</a>
+                <a onClick={() => scrollToSection("5")}>
+                  Healthy ways to communicate in relationships
+                </a>
               </li>
               <li>
-                <a href="#6">
+                <a onClick={() => scrollToSection("6")}>
                   Tips on managing stress and anxiety in relationships
                 </a>
               </li>
               <li>
-                <a href="#7">Dealing with relationship conflicts</a>
+                <a onClick={() => scrollToSection("7")}>
+                  Dealing with relationship conflicts
+                </a>
               </li>
               <li>
-                <a href="#8">Questions to help manage conflict</a>
+                <a onClick={() => scrollToSection("8")}>
+                  Questions to help manage conflict
+                </a>
               </li>
               <li>
-                <a href="#9">Leaving an unhealthy relationship</a>
+                <a onClick={() => scrollToSection("9")}>
+                  Leaving an unhealthy relationship
+                </a>
               </li>
             </ol>
           </div>

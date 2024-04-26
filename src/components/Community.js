@@ -19,6 +19,7 @@ import {
   serverTimestamp,
   Timestamp,
   deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { auth, app } from "../firebase";
 
@@ -73,6 +74,7 @@ export const Community = () => {
       displayName: user.displayName,
       text: newMessage,
       timestamp: serverTimestamp(),
+      reaction: 0,
     });
     setNewMessage("");
   };
@@ -83,12 +85,12 @@ export const Community = () => {
     const differenceInSeconds = currentTime.seconds - messageTimestamp.seconds;
 
     // Check if the message was sent within the last 5 minutes (300 seconds)
-    if (differenceInSeconds <= 300) {
+    if (differenceInSeconds <= 600) {
       // Delete the message document from Firestore
       await deleteDoc(doc(db, "messages", messageId));
     } else {
       // Alert the user that the message cannot be deleted
-      alert("You can only delete messages sent within the last 5 minutes.");
+      alert("You can only delete messages sent within the last 10 minutes.");
     }
   };
 
@@ -116,16 +118,43 @@ export const Community = () => {
     return date.toLocaleTimeString(undefined, options);
   }
 
+  const handleBodyClick = () => {
+    const checkbox = document.getElementById("nav_check");
+
+    checkbox.checked = false;
+  };
+
+  const addReaction = async (messageId, reactionType) => {
+    const messageRef = doc(db, "messages", messageId);
+    const messageDoc = await getDoc(messageRef);
+
+    if (messageDoc.exists()) {
+      let currentReaction = messageDoc.data().reaction || 0;
+
+      if (reactionType === "like") {
+        currentReaction++; // Increase reaction by one for thumbs up
+      } else if (reactionType === "love") {
+        currentReaction--; // Decrease reaction by one for thumbs down
+      }
+
+      // Update the reaction field in Firestore
+      await updateDoc(messageRef, {
+        reaction: currentReaction,
+      });
+    } else {
+      console.log("Document does not exist");
+    }
+  };
+
   return (
     <>
-      <ol className="timeline">
+      <ol className="timeline" onClick={handleBodyClick}>
         <li className="timeline-item">
           <span className="timeline-item-icon | faded-icon">
             <i class="ri-check-fill | avatar"></i>
           </span>
 
           <div className="timeline-item-description">
-            <i className="ri-hand-sanitizer-fill"></i>
             <span>
               <Link href="#">Ravindu Ishara</Link> has started the community
               successfully
@@ -139,10 +168,9 @@ export const Community = () => {
           </span>
 
           <div className="timeline-item-description">
-            <i className="ri-hand-sanitizer-fill"></i>
             <span>
               <Link href="#">Ravindu Ishara</Link> has changed
-              <Link href="#"> 2 attributes</Link> on
+              <Link href="#">🧩 2 attributes</Link> on
               <time datetime="19-01-2024">Jan 19, 2024</time>
             </span>
           </div>
@@ -152,7 +180,6 @@ export const Community = () => {
             <i className="ri-arrow-right-fill"></i>
           </span>
           <div className="timeline-item-description">
-            <i className="ri-capsule-fill"></i>
             <span>
               <Link href="#">Ravindu Ishara</Link> moved{" "}
               <Link href="#">Ishan Wishara</Link> to
@@ -175,68 +202,96 @@ export const Community = () => {
             </span>
             <div className="timeline-item-wrapper" ref={messagesEndRef}>
               <div className="timeline-item-description">
-                <img
-                  src={msg.data.photoURL}
-                  alt="dp"
-                  width="55"
-                  height="55"
-                  style={{ borderRadius: "50%" }}
-                />
-                <span>
-                  <Link href="#">{msg.data.displayName}</Link> commented on{" "}
+                <div className="details_comment">
+                  <img
+                    src={msg.data.photoURL}
+                    alt="dp"
+                    width="50"
+                    height="50"
+                    style={{ borderRadius: "50%" }}
+                  />
                   <span>
-                    {msg.data.timestamp
-                      ? formatDate(msg.data.timestamp.toDate())
-                      : "Unknown"}
+                    <Link href="#">{msg.data.displayName}</Link>
                   </span>
-                  {msg.data.timestamp && (
-                    <h6>{formatTime(msg.data.timestamp.toDate())}</h6>
-                  )}
-                  {user && user.uid === msg.data.uid && (
+                </div>
+
+                <div className="comment">
+                  <p className="button_chat text">{msg.data.text}</p>
+                  <div className="reactions">
+                    {/* Render reaction buttons */}
                     <button
-                      className="delete_btn"
-                      onClick={() => deleteMessage(msg.id, msg.data.timestamp)}
+                      onClick={() => addReaction(msg.id, "like")}
+                      title="Like"
                     >
-                      <i class="ri-delete-bin-5-line"></i>
+                      👍 {"  "} {msg.data.reaction}
                     </button>
-                  )}
-                </span>
-              </div>
-              <div className="comment">
-                <p className="button_chat text">{msg.data.text}</p>
+                    <button
+                      onClick={() => addReaction(msg.id, "love")}
+                      title="Love"
+                    >
+                      👎
+                    </button>
+                    {/* Add more buttons for other reaction types as needed */}
+                  </div>
+                  <span>
+                    {msg.data.timestamp ? (
+                      <span>
+                        <sub>
+                          {formatDate(msg.data.timestamp.toDate())} {" | "}
+                          {formatTime(msg.data.timestamp.toDate())}
+                        </sub>
+                      </span>
+                    ) : (
+                      "Unknown"
+                    )}
+                    {user && user.uid === msg.data.uid && (
+                      <button
+                        className="delete_btn"
+                        onClick={() =>
+                          deleteMessage(msg.id, msg.data.timestamp)
+                        }
+                        title="Delete Message"
+                      >
+                        <i className="ri-delete-bin-5-line"></i>
+                      </button>
+                    )}
+                  </span>
+                </div>
               </div>
             </div>
           </li>
         ))}
       </ol>
-      <div className="sticky_section">
+      <div className="sticky_section" onClick={handleBodyClick}>
         <div class="chat-box">
           {user && (
             <div class="chat-box-header">
-              <h2>
-                <span class="username">
-                  {user ? user.displayName : "Guest"}
-                </span>
-              </h2>
+              <img
+                src={user.photoURL}
+                alt="dp"
+                width="55"
+                height="55"
+                style={{ borderRadius: "50%" }}
+              />
+              <span>{user.displayName}</span>
             </div>
           )}
           {user && (
             <div class="chat-box-input">
               <input
                 type="text"
-                placeholder="Type your message..."
+                placeholder={newMessage ? newMessage : "Type your message..."}
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
               />
-              <button onClick={sendMessage}>
+              <button onClick={sendMessage} title="Send">
                 <i class="ri-send-plane-2-fill"></i>
               </button>
             </div>
           )}
           {user && (
             <div class="chat-box-logout">
-              <span>Signout</span>
-              <button onClick={() => auth.signOut()}>
+              <button onClick={() => auth.signOut()} title="Sign Out">
                 <i class="ri-upload-2-line"></i>
               </button>
             </div>
@@ -250,6 +305,7 @@ export const Community = () => {
                 <button
                   className="google-login-button"
                   onClick={handleGoogleLogin}
+                  title="Login Account"
                 >
                   <div className="icons">
                     <img
@@ -264,7 +320,7 @@ export const Community = () => {
           )}
         </div>
         <div className="dropdown_btn">
-          <button onClick={scrollToBottom}>
+          <button onClick={scrollToBottom} title="Scroll to bottom">
             <i class="ri-skip-down-line"></i>
           </button>
         </div>

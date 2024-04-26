@@ -2,6 +2,12 @@ import { NavLink } from "react-router-dom";
 import "./navbar.css";
 
 function Navbar() {
+  // const handleBodyClick = () => {
+  //   const checkbox = document.getElementById("nav_check");
+  //   if ((checkbox.checked = true)) {
+  //     checkbox.checked = true;
+  //   }
+  // };
   return (
     <div className="navibar">
       <div className="header">
