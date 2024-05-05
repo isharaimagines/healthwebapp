@@ -45,34 +45,34 @@ export const Self = () => {
             <ol>
               <span>Table of Contents</span>
               <li>
-                <a onClick={() => scrollToSection("0")}>
+                <button onClick={() => scrollToSection("0")}>
                   What is good mental health?
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("1")}>
+                <button onClick={() => scrollToSection("1")}>
                   Talk to Someone You Trust
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("2")}>
+                <button onClick={() => scrollToSection("2")}>
                   Look After Your Physical Health
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("3")}>
+                <button onClick={() => scrollToSection("3")}>
                   Do Activities That You Enjoy
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("4")}>
+                <button onClick={() => scrollToSection("4")}>
                   Steer Away From Harmful Substances
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("5")}>
+                <button onClick={() => scrollToSection("5")}>
                   Take Two Minutes to Focus On The World Around You
-                </a>
+                </button>
               </li>
             </ol>
           </div>
@@ -146,11 +146,12 @@ export const Self = () => {
                   minutes daily, whether that's running, walking, yoga, dancing,
                   cycling, or even gardening.
                 </li>
+
                 <li>
-                  <strong>Eat a balanced and healthy diet</strong>
+                  <strong>Eat a balanced and healthy diet</strong>sdf
                 </li>
                 <li>
-                  <strong>The importance of adequate sleep</strong>
+                  <strong>The importance of adequate sleep</strong>sdfs
                 </li>
               </ul>
             </div>

@@ -46,46 +46,52 @@ export const Child = () => {
             <ol>
               <span>Table of Contents</span>
               <li>
-                <a onClick={() => scrollToSection("1")}>Introduction</a>
+                <button onClick={() => scrollToSection("1")}>
+                  Introduction
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("2")}>
+                <button onClick={() => scrollToSection("2")}>
                   Mental health determinants
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("3")}>Emotional disorders</a>
+                <button onClick={() => scrollToSection("3")}>
+                  Emotional disorders
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("4")}>
+                <button onClick={() => scrollToSection("4")}>
                   Behavioural disorders
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("5")}>Eating disorders</a>
+                <button onClick={() => scrollToSection("5")}>
+                  Eating disorders
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("6")}>Psychosis</a>
+                <button onClick={() => scrollToSection("6")}>Psychosis</button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("7")}>
+                <button onClick={() => scrollToSection("7")}>
                   Suicide and self-harm
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("8")}>
+                <button onClick={() => scrollToSection("8")}>
                   Risk-taking behaviours
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("9")}>
+                <button onClick={() => scrollToSection("9")}>
                   Promotion and prevention
-                </a>
+                </button>
               </li>
               <li>
-                <a onClick={() => scrollToSection("10")}>
+                <button onClick={() => scrollToSection("10")}>
                   Early detection and treatment
-                </a>
+                </button>
               </li>
             </ol>
           </div>

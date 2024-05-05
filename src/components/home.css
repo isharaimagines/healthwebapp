@@ -6,9 +6,11 @@
   --gradient-color: linear-gradient(90deg, #0bd290, #14ff9d);
   --black-color: #0d0e12;
   --reflection-color: rgba(246, 245, 238, 0.3);
-  --body-color: #fffdf5;
+  --body-color: #f8faff !important;
   --body-font: "Montserrat", sans-serif;
   --normal-font-size: 1rem;
+  --text-color-white: #0f151d;
+  --text-color-white-bg: white;
 }
 
 * {
@@ -24,20 +26,40 @@
   display: flex;
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: 700px;
   justify-content: center;
   overflow: hidden;
 }
 .section .main_banner {
   position: absolute;
-  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
+}
+.section .main_banner h1 {
+  position: absolute;
+  color: #fafafa;
+  background: rgba(15, 21, 29, 0.5);
+  padding: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 65px;
 }
 .section .main_banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.section .cloudy {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  bottom: 0;
+  background-image: url(../assets/img/ad.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .section .second_banner_text {
@@ -46,12 +68,12 @@
   flex-direction: column;
 }
 .section .second_banner_text h1 {
-  color: #f1f1f1;
+  color: var(--text-color-white);
   font-family: "Inter", sans-serif;
   font-size: 3.25rem;
 }
 .section .second_banner_text p {
-  color: #f1f1f1;
+  color: var(--text-color-white);
   font-family: "Inter", sans-serif;
   font-size: 1.2rem;
 }
@@ -117,13 +139,13 @@
 }
 .section .second_banner_group div a .text h1 {
   font-size: 36px;
-  color: #f1f1f1;
+  color: var(--text-color-white-bg);
   font-family: "Inter", sans-serif;
 }
 .section .second_banner_group div a .text p {
   font-size: 24px;
   font-weight: 800;
-  color: #f1f1f1;
+  color: var(--text-color-white-bg);
   font-family: "Inter", sans-serif;
 }
 .section .third_banner {
@@ -155,27 +177,27 @@
 }
 .section .third_banner .text h1 {
   text-align: right;
-  color: #f1f1f1;
+  color: var(--text-color-white);
   font-family: "Inter", sans-serif;
   font-size: 36px;
   padding: 12px;
 }
 .section .third_banner .text span {
   text-align: right;
-  color: #f1f1f1;
+  color: var(--text-color-white);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   padding: 12px;
 }
 .section .third_banner .text p {
   text-align: right;
-  color: #f1f1f1;
+  color: var(--text-color-white);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   padding: 12px;
 }
 @media (max-width: 768px) and (min-width: 577px),
-  (max-width: 992px) and (min-width: 769px),
+  (max-width: 1200px) and (min-width: 769px),
   (max-width: 576px) {
   .section {
     overflow: hidden;
@@ -191,6 +213,8 @@
   }
   .section .second_banner_group {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .section .second_banner_text {
     margin-top: 20px;
@@ -200,12 +224,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   .section .third_banner .image {
     justify-content: center;
     align-items: center;
-    max-width: 500px;
-    max-height: 400px;
+    width: 98%;
+    height: 100%;
   }
   .section .third_banner .text {
     justify-content: center;
@@ -217,8 +242,40 @@
   .section .third_banner .text p {
     text-align: justify;
   }
+  .section .second_banner_group div a .text {
+    transform: translateX(25px) translateY(-60px);
+  }
+  .section .second_banner_group div a div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .section .second_banner_group div a {
+    width: 100%;
+    height: 100%;
+  }
+  .section .second_banner_group div {
+    width: 90%;
+    height: 400px;
+  }
+  .section .third_banner .text h1 {
+    text-align: center;
+  }
 }
-
+.equel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 130px;
+  margin: 0;
+  padding-top: 50px;
+}
+.equel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .card {
   display: flex;
   align-items: center;
@@ -328,5 +385,3 @@
     transform: scale(1);
   }
 }
-
-/*-------*/

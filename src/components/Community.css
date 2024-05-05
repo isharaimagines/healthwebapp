@@ -17,6 +17,7 @@
 /* Some basic CSS overrides */
 body {
   line-height: 1.5;
+  background: #f8faff !important;
 }
 
 button,
@@ -119,8 +120,8 @@ img {
   flex-direction: column;
   text-align: left;
   padding: 8px;
-  background: #182533;
-  color: #fff;
+  background: #def5ce;
+  color: #182533;
   border-radius: 6px;
 }
 .timeline-item-description .details_comment {
@@ -200,7 +201,7 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: #fafafa;
+  color: #182533;
   border-radius: 6px;
   font-size: 1rem;
   text-align: justify;
@@ -317,6 +318,7 @@ img {
   border-radius: 12px;
   /* border: 1px solid white; */
   background-color: #fafafa; /* Set background color */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -491,9 +493,10 @@ img {
 }
 
 .reactions button {
-  background: darkslategray;
-  color: white;
-  padding: 1px 4px 1px 1px;
+  background: transparent;
+  color: #182533;
+  padding: 0;
+  margin: 0;
   border-radius: 40px;
 }
 
@@ -514,6 +517,7 @@ img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  background: #5fbe67;
   animation: bounceUpDown 2s infinite; /* Apply the animation */
 }
 

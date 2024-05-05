@@ -26,7 +26,7 @@ function Navbar() {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/psycho">Psychotherapists</NavLink>
+              <NavLink to="/psycho">Psychotherapy</NavLink>
             </li>
             <li>
               <NavLink to="/community">Community</NavLink>

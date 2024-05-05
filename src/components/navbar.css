@@ -17,9 +17,7 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
-body {
-  background: #0f151d;
-}
+
 .navibar {
   width: 100%;
   position: fixed;
@@ -30,26 +28,14 @@ body {
   position: relative;
   width: 80%;
   height: 70px;
-  background: rgba(187, 187, 187, 0.466);
+  background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   border-radius: 0 0 10px 10px;
   margin: 0 auto;
-  background-image: linear-gradient(
-    90deg,
-    #00111c,
-    #001523,
-    #001a2c,
-    #002137,
-    #00253e,
-    #002945,
-    #002e4e,
-    #003356,
-    #003a61,
-    #00406c
-  );
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   z-index: 1000;
 }
 .navibar .header .logo {
@@ -62,7 +48,7 @@ body {
   color: #0bd290;
 }
 .navibar .header .logo h5 {
-  color: #dedfdf;
+  color: #0d0e12;
 }
 .navibar .header nav .logo {
   display: none;
@@ -85,6 +71,7 @@ body {
   transform: 0.2s;
   /* border-radius: 30px; */
   position: relative;
+  color: #04090c;
 }
 .navibar .header nav ul ol a {
   text-decoration: none;
@@ -93,17 +80,13 @@ body {
   margin-right: 10px;
   transition: 2s ease-in-out;
 }
-.navibar .header nav ul li a:hover {
-  color: #04090c;
-  background: #f1f1f1;
-}
+
 .navibar .header nav ul li a.active {
-  color: #04090c;
-  background: #bcbdbd;
+  color: #00917c;
 }
-.navibar .header nav ul li a.active:hover {
+/* .navibar .header nav ul li a.active:hover {
   background: #f1f1f1;
-}
+} */
 
 .navibar .header nav ul li a i.ri-arrow-left-line {
   transition: 0.8s ease-in-out;
@@ -243,7 +226,7 @@ body {
   background: #ffffff;
 }
 @media (max-width: 768px) and (min-width: 577px),
-  (max-width: 992px) and (min-width: 769px),
+  (max-width: 1200px) and (min-width: 769px),
   (max-width: 576px) {
   .navibar .header {
     width: 90%;
@@ -307,3 +290,6 @@ body {
     width: 180px;
   }
 }
+
+/* @media (max-width: 2800px) and (min-width: 1201px) {
+} */

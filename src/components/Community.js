@@ -221,13 +221,13 @@ export const Community = () => {
                     {/* Render reaction buttons */}
                     <button
                       onClick={() => addReaction(msg.id, "like")}
-                      title="Like"
+                      title="like"
                     >
                       👍 {"  "} {msg.data.reaction}
                     </button>
                     <button
                       onClick={() => addReaction(msg.id, "love")}
-                      title="Love"
+                      title="no"
                     >
                       👎
                     </button>
