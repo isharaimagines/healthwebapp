@@ -217,13 +217,13 @@
   transition: 0.2s;
 }
 .navibar .header .myburge:hover div {
-  background-color: #fdfdfd;
+  background-color: #00111c;
 }
 .navibar .header .myburge div {
   width: 30px;
   height: 3px;
   margin: 6px 0;
-  background: #ffffff;
+  background: #04090c;
 }
 @media (max-width: 768px) and (min-width: 577px),
   (max-width: 1200px) and (min-width: 769px),

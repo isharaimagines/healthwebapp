@@ -40,11 +40,13 @@
 }
 .section .main_banner h1 {
   position: absolute;
-  color: #fafafa;
-  background: rgba(15, 21, 29, 0.5);
-  padding: 8px;
+  color: #0d0e12;
+  background: rgba(248, 250, 255, 0.58);
+  padding: 50px;
   font-family: "Inter", sans-serif;
   font-size: 65px;
+  bottom: -71px;
+  border-radius: 12px;
 }
 .section .main_banner img {
   width: 100%;
