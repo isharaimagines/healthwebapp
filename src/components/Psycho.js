@@ -206,7 +206,6 @@ export const Psycho = () => {
             <img src={arrows_1} alt="arrows path"></img>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
 
       <div className="quizebanner">
@@ -339,8 +338,6 @@ export const Psycho = () => {
             <img src={arrows_2} alt="arrows path"></img>
           </div>
         </div>
-=======
->>>>>>> 6292ccff4edc022a2ccd736a2cc62bd62e92fb3c
       </div>
 
       <div className="quizebanner">

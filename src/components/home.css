@@ -40,7 +40,6 @@
 }
 .section .main_banner .text_title {
   position: absolute;
-<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,15 +52,6 @@
     rgba(0, 191, 99, 0.8),
     rgba(92, 225, 230, 0.8)
   );
-=======
-  color: #0d0e12;
-  background: rgba(248, 250, 255, 0.58);
-  padding: 50px;
-  font-family: "Inter", sans-serif;
-  font-size: 65px;
-  bottom: -71px;
-  border-radius: 12px;
->>>>>>> 6292ccff4edc022a2ccd736a2cc62bd62e92fb3c
 }
 .section .main_banner .text_title h1 {
   font-family: "Inter", sans-serif;
