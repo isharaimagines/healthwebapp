@@ -340,48 +340,8 @@ export const Psycho = () => {
         </div>
       </div>
 
-      <div className="quizebanner">
-        <div className="content_cards">
-          <div className="main_cont">
-            <div className="cont_image">
-              <img src={cont_1_image} alt="card_image" />
-            </div>
-            <div className="cont_details">
-              <h1>INITIAL EVALUATION</h1>
-              <h4>
-                It seems like you're trying to pass the image1 variable
-                incorrectly as the imageUrl prop in your Psycho component.
-                Instead of wrapping image1 in curly braces within the imageUrl
-                property, you should directly pass image1 as the value. Here's
-                the corrected version of your Psycho component:
-              </h4>
-            </div>
-            <div class="area">
-              <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-          <div className="arrows">
-            <img src={arrows_1} alt="arrows path"></img>
-          </div>
-        </div>
+      <div className="title">
+        <span>NEW QUIZZES</span>
       </div>
 
       <div className="cardBox">
