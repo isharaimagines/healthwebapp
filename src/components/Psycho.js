@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./psyQuizzes.css";
 import "./boxhover.css";
 import gifanimation from "../assets/img/Animation.gif";
@@ -11,6 +11,7 @@ import arrows_1 from "../assets/img/arrow1.png";
 import arrows_2 from "../assets/img/arrow3.png";
 import arrows_3 from "../assets/img/arrows3.png";
 import arrows_4 from "../assets/img/arrows4.png";
+import arrows_5 from "../assets/img/arrow2.png";
 import div_sec_image from "../assets/img/banner_sec_Quize.png";
 
 const BookingCard = ({ imageUrl, title, subTitle, info }) => (
@@ -35,44 +36,6 @@ const BookingCard = ({ imageUrl, title, subTitle, info }) => (
       </div>
     </div>
   </li>
-);
-
-const InstructSec = ({ CardImg, title, subtitle, Arrow_type }) => (
-  <div className="content_cards">
-    <div className="main_cont">
-      <div className="cont_image">
-        <img src={CardImg} alt="card_image" />
-      </div>
-      <div className="cont_details">
-        <h1>{title}</h1>
-        <h4>{subtitle}</h4>
-      </div>
-      <div class="area">
-        <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-    <div className="arrows">
-      <img src={Arrow_type} alt="arrows path"></img>
-    </div>
-  </div>
 );
 
 export const Psycho = () => {
@@ -130,6 +93,53 @@ export const Psycho = () => {
       arrow_type_: arrows_1,
     },
   ];
+  const [sections, setSections] = useState([]);
+  const [quizeBanners, setQuizeBanners] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      sections.forEach((section) => {
+        const offset = section.offsetTop;
+        const height = section.offsetHeight;
+        console.log("ScrollY" + scrollY);
+        console.log("Offset" + offset);
+        console.log("Height" + height);
+
+        if (scrollY >= offset && scrollY < offset + height) {
+          section.classList.add("show_animate");
+        } else {
+          section.classList.remove("show_animate");
+        }
+      });
+
+      quizeBanners.forEach((banner) => {
+        const offset = banner.offsetTop;
+        const height = banner.offsetHeight;
+        console.log("ScrollY" + scrollY);
+        console.log("Offset" + offset);
+        console.log("Height" + height);
+
+        if (scrollY >= offset && scrollY < offset + height) {
+          const customSection = document.querySelector(".arrow_down");
+          customSection.classList.add("show_animate");
+        }
+      });
+    };
+
+    const sections = document.querySelectorAll(".quizebanner"); // Change the selector as per your HTML structure
+    setSections(sections);
+
+    const quizeBanners = document.querySelectorAll(".text_heading"); // Change the selector for quize banners
+    setQuizeBanners(quizeBanners);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -153,16 +163,181 @@ export const Psycho = () => {
       <div className="arrow_down">
         <img src={arrows_4} alt="arrow down"></img>
       </div>
+
       <div className="quizebanner">
-        {instructdetails.map((instdetail, index) => (
-          <InstructSec
-            key={index}
-            CardImg={instdetail.detailsCardImg}
-            title={instdetail.title}
-            subtitle={instdetail.subtitle}
-            Arrow_type={instdetail.arrow_type_}
-          />
-        ))}
+        <div className="content_cards">
+          <div className="main_cont">
+            <div className="cont_image">
+              <img src={cont_1_image} alt="card_image" />
+            </div>
+            <div className="cont_details">
+              <h1>INITIAL EVALUATION</h1>
+              <h4>
+                It seems like you're trying to pass the image1 variable
+                incorrectly as the imageUrl prop in your Psycho component.
+                Instead of wrapping image1 in curly braces within the imageUrl
+                property, you should directly pass image1 as the value. Here's
+                the corrected version of your Psycho component:
+              </h4>
+            </div>
+            <div class="area">
+              <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div className="arrows">
+            <img src={arrows_1} alt="arrows path"></img>
+          </div>
+        </div>
+      </div>
+
+      <div className="quizebanner">
+        <div className="content_cards">
+          <div className="main_cont">
+            <div className="cont_details">
+              <h1>MEDICAL CONSULTATION</h1>
+              <h4>
+                It seems like you're trying to pass the image1 variable
+                incorrectly as the imageUrl prop in your Psycho component.
+                Instead of wrapping image1 in curly braces within the imageUrl
+                property, you should directly pass image1 as the value. Here's
+                the corrected version of your Psycho component:
+              </h4>
+            </div>
+            <div className="cont_image">
+              <img src={cont_2_image} alt="card_image" />
+            </div>
+            <div class="area">
+              <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div className="arrows">
+            <img src={arrows_2} alt="arrows path"></img>
+          </div>
+        </div>
+      </div>
+
+      <div className="quizebanner">
+        <div className="content_cards">
+          <div className="main_cont">
+            <div className="cont_image">
+              <img src={cont_3_image} alt="card_image" />
+            </div>
+            <div className="cont_details">
+              <h1>TREATMENT PLAN</h1>
+              <h4>
+                It seems like you're trying to pass the image1 variable
+                incorrectly as the imageUrl prop in your Psycho component.
+                Instead of wrapping image1 in curly braces within the imageUrl
+                property, you should directly pass image1 as the value. Here's
+                the corrected version of your Psycho component:
+              </h4>
+            </div>
+            <div class="area">
+              <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div className="arrows">
+            <img src={arrows_3} alt="arrows path"></img>
+          </div>
+        </div>
+      </div>
+
+      <div className="quizebanner">
+        <div className="content_cards">
+          <div className="main_cont">
+            <div className="cont_details">
+              <h1>MONITORING AND CONTROL</h1>
+              <h4>
+                It seems like you're trying to pass the image1 variable
+                incorrectly as the imageUrl prop in your Psycho component.
+                Instead of wrapping image1 in curly braces within the imageUrl
+                property, you should directly pass image1 as the value. Here's
+                the corrected version of your Psycho component:
+              </h4>
+            </div>
+            <div className="cont_image">
+              <img src={cont_4_image} alt="card_image" />
+            </div>
+            <div class="area">
+              <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div className="arrows">
+            <img src={arrows_2} alt="arrows path"></img>
+          </div>
+        </div>
       </div>
       <div className="cardBox">
         <ul className="quize_ul">

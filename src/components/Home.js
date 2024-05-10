@@ -6,7 +6,6 @@ import teen from "../assets/img/teen.png";
 import motivation_section from "../assets/img/motivation_section_banner.jpg";
 import { Link } from "react-router-dom";
 import equal_image from "../assets/img/equle2.png";
-
 export const Home = () => {
   const handleBodyClick = () => {
     const checkbox = document.getElementById("nav_check");
@@ -18,9 +17,26 @@ export const Home = () => {
       <div className="section" onClick={handleBodyClick}>
         <div className="main_banner">
           <img src={wallpaper} alt="wallpapers" />
-          <h1>Find Mental Health Support</h1>
+          <div className="text_title">
+            <h1>
+              Empowering Optimal <br></br>
+              mental Health <i>For Everyone!</i>
+            </h1>
+            <h2>
+              Use this search bar to find information on our site, or click on
+              one of the buttons below!
+            </h2>
+            <div class="search__container">
+              <input
+                class="search__input"
+                type="text"
+                placeholder="Search with me Peace"
+              />
+            </div>
+          </div>
         </div>
       </div>
+
       <div className="equel">
         <img src={equal_image} alt="equle"></img>
       </div>
