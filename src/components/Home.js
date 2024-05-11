@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "./home.css";
 import wallpaper from "../assets/img/wallpaper.jpg";
 import myself from "../assets/img/myself.png";
@@ -6,12 +7,76 @@ import teen from "../assets/img/teen.png";
 import motivation_section from "../assets/img/motivation_section_banner.jpg";
 import { Link } from "react-router-dom";
 import equal_image from "../assets/img/equle2.png";
+
 export const Home = () => {
   const handleBodyClick = () => {
     const checkbox = document.getElementById("nav_check");
 
     checkbox.checked = false;
   };
+
+  useEffect(() => {
+    function handleScroll() {
+      const value = window.scrollY * 1.1; // Apply the multiplier
+      console.log(value);
+      // Find the target element
+      const targetElement = document.querySelector(".second_banner_text");
+      const targetCards = document.querySelector(".second_banner_group");
+      const targetBottom = document.querySelector(".third_banner");
+      const targetEquel = document.querySelector(".equel");
+      // Check if the target element exists
+      if (targetElement) {
+        // Check if scrollY is within a specific range
+        if (value >= 280) {
+          // Add the class to the target element
+          targetElement.classList.add("new-class");
+        } else {
+          // Remove the class from the target element if not in the range
+          targetElement.classList.remove("new-class");
+        }
+      }
+
+      if (targetCards) {
+        // Check if scrollY is within a specific range
+        if (value >= 680) {
+          // Add the class to the target element
+          targetCards.classList.add("new-class");
+        } else {
+          // Remove the class from the target element if not in the range
+          targetCards.classList.remove("new-class");
+        }
+      }
+
+      if (targetBottom) {
+        // Check if scrollY is within a specific range
+        if (value >= 1130) {
+          // Add the class to the target element
+          targetBottom.classList.add("new-class");
+        } else {
+          // Remove the class from the target element if not in the range
+          targetBottom.classList.remove("new-class");
+        }
+      }
+
+      if (targetEquel) {
+        // Check if scrollY is within a specific range
+        if (value >= 190) {
+          // Add the class to the target element
+          targetEquel.classList.add("new-class");
+        } else {
+          // Remove the class from the target element if not in the range
+          targetEquel.classList.remove("new-class");
+        }
+      }
+    }
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className="section" onClick={handleBodyClick}>

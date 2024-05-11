@@ -350,7 +350,14 @@ p.bar {
   font-size: 22px;
 }
 
-.title span {
-  font-size: 32px;
-  font-weight: 400;
+.title {
+  position: relative;
+  transition: 1s ease-in-out;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.title.new-class {
+  transform: translateY(0px);
+  opacity: 1;
 }

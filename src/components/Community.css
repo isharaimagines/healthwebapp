@@ -90,6 +90,9 @@ img {
 }
 .timeline-item-wrapper span {
   text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .timeline-item-icon {
   display: flex;
@@ -155,8 +158,8 @@ img {
   cursor: pointer;
 }
 .timeline-item-description button i {
-  color: tomato;
-  background: #182533;
+  color: var(--c-grey-500);
+  background: #def5ce;
   font-size: 18px;
 }
 .timeline-item-description img {
@@ -501,7 +504,10 @@ img {
 }
 
 .right-msg .timeline-item-wrapper span {
+  display: flex;
   text-align: right;
+  justify-content: center;
+  align-items: center;
 }
 
 .sticky_section .dropdown_btn {

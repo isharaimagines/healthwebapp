@@ -197,19 +197,17 @@ export const Community = () => {
             key={msg.id}
           >
             <span className="timeline-item-icon | filled-icon">
-              <i className="ri-question-answer-fill"></i>
-              {/*  <i className="ri-discuss-fill"></i>  */}
+              <img
+                src={msg.data.photoURL}
+                alt="dp"
+                width="50"
+                height="50"
+                style={{ borderRadius: "50%", objectFit: "contain" }}
+              />
             </span>
             <div className="timeline-item-wrapper" ref={messagesEndRef}>
               <div className="timeline-item-description">
                 <div className="details_comment">
-                  <img
-                    src={msg.data.photoURL}
-                    alt="dp"
-                    width="50"
-                    height="50"
-                    style={{ borderRadius: "50%" }}
-                  />
                   <span>
                     <Link href="#">{msg.data.displayName}</Link>
                   </span>
@@ -218,7 +216,6 @@ export const Community = () => {
                 <div className="comment">
                   <p className="button_chat text">{msg.data.text}</p>
                   <div className="reactions">
-                    {/* Render reaction buttons */}
                     <button
                       onClick={() => addReaction(msg.id, "like")}
                       title="like"
@@ -231,7 +228,6 @@ export const Community = () => {
                     >
                       👎
                     </button>
-                    {/* Add more buttons for other reaction types as needed */}
                   </div>
                   <span>
                     {msg.data.timestamp ? (
@@ -252,7 +248,7 @@ export const Community = () => {
                         }
                         title="Delete Message"
                       >
-                        <i className="ri-delete-bin-5-line"></i>
+                        <i class="ri-delete-bin-7-line"></i>
                       </button>
                     )}
                   </span>
