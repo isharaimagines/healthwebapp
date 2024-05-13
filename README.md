@@ -36,6 +36,7 @@ The website is developed and maintained by the following authors:
 - [ishararaviget9]: [https://github.com/ishararaviget9](#)
 
 ## Technical Details
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/9ab532b9-7999-4889-b016-d107a465b586/deploy-status)](https://app.netlify.com/sites/healthwebapp9/deploys)
 
 ### Technologies Used
 
