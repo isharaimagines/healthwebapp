@@ -9,7 +9,7 @@ import { Community } from "./components/Community";
 import { Self } from "./components/Pages/self";
 import { Partners } from "./components/Pages/partners";
 import { Child } from "./components/Pages/children";
-
+import { UserLoging } from "./components/UserLoging";
 function App() {
   return (
     <div className="App">
@@ -22,6 +22,7 @@ function App() {
         <Route path="/self" element={<Self />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/child" element={<Child />} />
+        <Route path="/userlog" element={<UserLoging />} />
       </Routes>
       <Footer />
     </div>

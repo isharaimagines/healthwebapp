@@ -2,24 +2,18 @@ import { NavLink } from "react-router-dom";
 import "./navbar.css";
 
 function Navbar() {
-  // const handleBodyClick = () => {
-  //   const checkbox = document.getElementById("nav_check");
-  //   if ((checkbox.checked = true)) {
-  //     checkbox.checked = true;
-  //   }
-  // };
   return (
     <div className="navibar">
       <div className="header">
         <div className="logo">
           <h1>WITH</h1>
-          <h5>&ensp;me PEACE</h5>
+          <h5>me PEACE</h5>
         </div>
         <input type="checkbox" id="nav_check" hidden />
         <nav>
           <div className="logo">
             <h1>WITH</h1>
-            <h5>&ensp;me PEACE</h5>
+            <h5>me PEACE</h5>
           </div>
           <ul>
             <li>
@@ -35,7 +29,7 @@ function Navbar() {
               <NavLink to="/about">About Us</NavLink>
             </li>
             <ol>
-              <NavLink to="./registerto.php" className="button">
+              <NavLink to="/userlog" className="button">
                 <div className="button__content">
                   <span className="button__text">Be Member</span>
                   <i className="ri-leaf-fill"></i>

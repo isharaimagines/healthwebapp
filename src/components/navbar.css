@@ -101,7 +101,7 @@
     rgb(46 240 97 / 20%) 0px 12px, rgb(46 240 182 / 10%) 0px 16px,
     rgb(46 240 82 / 5%) 0px 20px;
   transform: translateY(-3px);
-  background: #0bd290;
+  background: linear-gradient(135deg, #2ebdc4 0%, #68e5b2 100%);
   padding: 12px;
   transition: all 0.8s ease-in-out;
 }
@@ -116,7 +116,8 @@
   background: var(--gradient-color);
   padding: 12px 24px;
   border-radius: 4rem;
-  border: 2px solid var(--black-color);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   color: var(--black-color);
   display: flex;
   align-items: center;

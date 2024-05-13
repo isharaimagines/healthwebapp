@@ -6,7 +6,7 @@ import couples from "../assets/img/couples.png";
 import teen from "../assets/img/teen.png";
 import motivation_section from "../assets/img/motivation_section_banner.jpg";
 import { Link } from "react-router-dom";
-import equal_image from "../assets/img/equle2.png";
+import arrow1 from "../assets/img/arrow1.png";
 
 export const Home = () => {
   const handleBodyClick = () => {
@@ -103,7 +103,7 @@ export const Home = () => {
       </div>
 
       <div className="equel">
-        <img src={equal_image} alt="equle"></img>
+        <img src={arrow1} alt="equle"></img>
       </div>
       <div className="section" onClick={handleBodyClick}>
         <div className="second_banner_text">
