@@ -1,24 +1,29 @@
 import React, { useEffect } from "react";
 import "./Psycho.css";
-import gifanimation from "../assets/img/Animation.gif";
 import image1 from "../assets/img/smiling-professional.jpeg";
 import div_sec_image from "../assets/img/banner_sec_Quize.png";
-
-const BookingCard = ({ imageUrl, title, subTitle }) => (
-  <li className="booking-card">
-    <div className="book-container">
-      <img src={imageUrl} alt="banner" />
-    </div>
-    <div className="informations-container">
-      <h2>{title}</h2>
-
-      <h3>{subTitle}</h3>
-      <button class="learn-more"> Learn More</button>
-    </div>
-  </li>
-);
+import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 export const Psycho = () => {
+  const navigate = useNavigate();
+  const auth = getAuth();
+
+  const handleNavigation = () => {
+    const user = auth.currentUser;
+    if (user) {
+      // User is signed in, navigate to Personality Test
+      navigate("/personalitytest");
+    } else {
+      // No user is signed in, navigate to Another Page
+      navigate("/userlog");
+    }
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const bookings = [
     {
       imageUrl: image1,
@@ -67,6 +72,23 @@ export const Psycho = () => {
     };
   }, []);
 
+  const BookingCard = ({ imageUrl, title, subTitle }) => (
+    <li className="booking-card">
+      <div className="book-container">
+        <img src={imageUrl} alt="banner" />
+        <div className="border"></div>
+      </div>
+      <div className="informations-container">
+        <h2>{title}</h2>
+
+        <h3>{subTitle}</h3>
+        <button onClick={handleNavigation} class="learn-more">
+          Learn More
+        </button>
+      </div>
+    </li>
+  );
+
   return (
     <>
       <div className="quizebanner">
@@ -108,5 +130,3 @@ export const Psycho = () => {
     </>
   );
 };
-
-export default Psycho;

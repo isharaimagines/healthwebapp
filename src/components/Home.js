@@ -9,6 +9,10 @@ import { Link } from "react-router-dom";
 import arrow1 from "../assets/img/arrow1.png";
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleBodyClick = () => {
     const checkbox = document.getElementById("nav_check");
 

@@ -1,0 +1,54 @@
+.account {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+.account .account_title {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 120px;
+  padding-left: 180px;
+}
+.account .chatBoxheader {
+  position: relative;
+  display: flex;
+  padding-left: 180px;
+  flex: 1;
+  margin: 12px;
+}
+.account .details {
+  display: flex;
+  width: 100%;
+}
+.chatBoxheader span {
+  margin: 10px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: var(--c-blue-500);
+  text-decoration: none;
+}
+.chatBoxheader span:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) and (min-width: 577px),
+  (max-width: 1200px) and (min-width: 769px),
+  (max-width: 576px) {
+  .account .account_title {
+    padding-left: 10px;
+  }
+  .account .chatBoxheader {
+    padding-left: 10px;
+  }
+}

@@ -10,6 +10,9 @@ import { Self } from "./components/Pages/self";
 import { Partners } from "./components/Pages/partners";
 import { Child } from "./components/Pages/children";
 import { UserLoging } from "./components/UserLoging";
+import { PersonalityTest } from "./components/PersonalityTest";
+import { Profile } from "./components/profile";
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +26,8 @@ function App() {
         <Route path="/partners" element={<Partners />} />
         <Route path="/child" element={<Child />} />
         <Route path="/userlog" element={<UserLoging />} />
+        <Route path="/personalitytest" element={<PersonalityTest />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>

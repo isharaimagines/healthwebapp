@@ -1,0 +1,220 @@
+.quize_background {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+.quize_background .background_title {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 120px;
+  padding-left: 180px;
+}
+.quize_background .background_title h1 {
+  font-size: 42px;
+  margin: 0 !important;
+  font-family: "Tiempos Headline SemiBold", Tiempos Headline SemiBold Fallback,
+    serif;
+}
+.quize_background .background_explain {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 12px;
+  padding-left: 180px;
+}
+.quize_background .background_explain p {
+  text-align: justify;
+  font-family: "Tiempos Headline SemiBold", Tiempos Headline SemiBold Fallback,
+    serif;
+  width: 65%;
+  font-size: 18px;
+}
+.quize_background .background_explain p ul li {
+  font-size: 18px;
+  padding: 10px;
+}
+.quize_background .instructions {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 12px;
+  margin-left: 180px;
+  padding: 24px;
+  background: wheat;
+  border-radius: 12px;
+}
+.quize_background .instructions h1 {
+  font-family: "Tiempos Headline SemiBold", Tiempos Headline SemiBold Fallback,
+    serif;
+}
+.quize_background .instructions p {
+  font-size: 18px;
+  font-family: "Tiempos Headline SemiBold", Tiempos Headline SemiBold Fallback,
+    serif !important;
+}
+.quize_background .result {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 10px;
+}
+.quize_background .result p {
+  padding: 12px;
+  text-align: justify;
+}
+.quize_background .result .alert {
+  padding: 8px;
+  background: #ebebeb;
+  border-radius: 10px;
+}
+/*------------------------------------*/
+.quize_background .quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 180px;
+}
+.quize_background .quiz-container .questions {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 98%;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+}
+.quize_background .quiz-container .questions h2 {
+  text-align: left;
+  font-family: "Tiempos Headline SemiBold", Tiempos Headline SemiBold Fallback,
+    serif !important;
+}
+.inputGroup {
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+.inputGroup label {
+  padding: 12px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3c454c;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+.inputGroup input:checked ~ label {
+  color: #fff;
+}
+.inputGroup input:checked ~ label {
+  background-color: rgba(85, 98, 235, 0.5);
+}
+.inputGroup input:hover ~ label {
+  background-color: #5562eb;
+  color: #fff;
+}
+
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+#submit_btn {
+  padding: 17px 100px;
+  width: 87%;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(104, 229, 178);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(46, 189, 196) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 0%);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#submit_btn:hover {
+  box-shadow: rgb(39, 188, 195) 0px 7px 0px 0px;
+  transform: translateY(1px);
+}
+
+#submit_btn:active {
+  background-color: rgb(90, 230, 174);
+  /*50, 168, 80*/
+  box-shadow: rgb(39, 188, 195) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+/*---------------------------------------*/
+@media (max-width: 768px) and (min-width: 577px),
+  (max-width: 992px) and (min-width: 769px),
+  (max-width: 576px) {
+  .quize_background .quiz-container {
+    margin-left: 10px;
+  }
+  .quize_background .instructions {
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .quize_background .background_explain {
+    padding-left: 10px;
+  }
+  .quize_background .background_title {
+    padding-left: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .quize_background .quiz-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .quize_background .result {
+    margin-left: 0;
+  }
+  .quize_background {
+    overflow: hidden;
+  }
+  .quize_background .background_explain p {
+    width: 98%;
+  }
+  .quize_background .result {
+    margin-left: 0px;
+    width: 98%;
+  }
+}

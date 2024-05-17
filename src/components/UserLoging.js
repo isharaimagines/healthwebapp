@@ -1,18 +1,28 @@
 import "./UserLoging.css";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import content_image from "../assets/img/loging_banner.jpg";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase";
 
 export const UserLoging = () => {
-  const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const handleLoginClick = () => {
-    setIsActive(true);
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleSignupClick = () => {
-    setIsActive(false);
-  };
   return (
     <>
       <div className="sd">
@@ -20,7 +30,7 @@ export const UserLoging = () => {
           <div className="content_left">
             <h1>Sign up for WITH ME PEACE</h1>
             <div className="left_signbtns">
-              <button>
+              <button onClick={handleGoogleLogin}>
                 <svg class="w-4" viewBox="0 0 533.5 544.3">
                   <path
                     d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"
@@ -69,8 +79,8 @@ export const UserLoging = () => {
               <input type="password" placeholder="Password" />
               <button>
                 <span class="ml-3"> Sign Up </span>
-                <div className="liquid"></div>
               </button>
+
               <p>
                 I agree to abide by templatana's
                 <Link to="/">Terms of Service</Link>

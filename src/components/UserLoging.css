@@ -13,6 +13,7 @@ button {
   margin-top: 50px;
 }
 .sd .user_content {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,6 +113,7 @@ button {
 }
 .sd .user_content .content_left .left_form_border button {
   position: relative;
+  background: #87fab798;
   width: 60%;
   padding: 16px;
   outline: none;
@@ -121,62 +123,23 @@ button {
 }
 .sd .user_content .content_left .left_form_border button span {
   position: relative;
-  color: #050116;
-  z-index: 1000;
+  color: #222;
 }
-.sd .user_content .content_left .left_form_border button .liquid {
-  position: absolute;
-  top: -80px;
-  left: 0;
-  width: 400px;
-  height: 390px;
-  background: linear-gradient(135deg, #2ebdc4 0%, #68e5b2 50%, #2ebdc4 100%);
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-  transition: 0.5s;
-  z-index: 100;
-}
-
-.sd .user_content .content_left .left_form_border button .liquid::after,
-.sd .user_content .content_left .left_form_border button .liquid::before {
+.sd .user_content .content_left .left_form_border button:before {
   content: "";
-  width: 200%;
-  height: 200%;
   position: absolute;
-  top: -109px;
-  left: 50%;
-  transform: translate(-50%, -75%);
-  background: #000;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2ebdc4 0%, #68e5b2 100%);
+  transition: 0.6s ease-in;
+  background-color: line;
 }
-
-.sd .user_content .content_left .left_form_border button .liquid::before {
-  border-radius: 45%;
-  background: rgb(255, 255, 255);
-  /* background: linear-gradient(to bottom, #9be2fe 0%, #67d1fb 100%);
-  opacity: 1; */
-  animation: animate 5s linear infinite;
+.sd .user_content .content_left .left_form_border button:hover:before {
+  width: 100%;
 }
-
-.sd .user_content .content_left .left_form_border button .liquid::after {
-  border-radius: 40%;
-  background: rgba(255, 255, 255, 0.5);
-  /* background: linear-gradient(to bottom, #9be2fe 0%, #67d1fb 100%);
-  opacity: 0.5; */
-  animation: animate 10s linear infinite;
-}
-
-.sd .user_content .content_left .left_form_border button:hover .liquid {
-  top: -120px;
-}
-
-@keyframes animate {
-  0% {
-    transform: translate(-50%, -75%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -75%) rotate(360deg);
-  }
-}
-
 .sd .user_content .content_left .left_form_border p {
   margin-top: 20px;
   width: 60%;
@@ -195,16 +158,28 @@ button {
   (max-width: 576px) {
   .sd .user_content {
     flex-direction: column;
+    margin: 8px;
   }
   .sd .user_content .content_left {
     width: 100%;
   }
   .sd {
-    height: 120vh;
+    position: relative;
+    height: auto;
     margin-top: 100px;
+    overflow: hidden;
   }
   .sd .user_content .content_right {
     width: 95%;
     height: auto;
+    margin: 12px;
+  }
+  .sd .user_content .content_left .left_form_border input {
+    width: 90%;
+    padding: 8px;
+  }
+  .sd .user_content .content_left .left_form_border button {
+    width: 87%;
+    padding: 8px;
   }
 }

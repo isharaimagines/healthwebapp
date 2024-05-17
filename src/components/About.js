@@ -1,7 +1,12 @@
 import "./about.css";
 import aboutimg from "../assets/img/team_about.png";
+import React, { useEffect } from "react";
 
 export const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleBodyClick = () => {
     const checkbox = document.getElementById("nav_check");
 

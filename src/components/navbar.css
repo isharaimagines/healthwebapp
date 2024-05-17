@@ -239,8 +239,10 @@
     left: -500px;
     top: 0;
     z-index: 999;
-    width: 360px;
-    height: 100vh;
+    width: auto;
+    height: auto;
+    padding-bottom: 12px;
+    border-radius: 12px;
     background-image: linear-gradient(
       90deg,
       #00111c,
@@ -258,8 +260,9 @@
     box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
     flex-direction: column;
   }
+
   #nav_check:checked ~ nav {
-    left: 0;
+    left: -30px;
   }
   .navibar .header nav .logo {
     display: block;

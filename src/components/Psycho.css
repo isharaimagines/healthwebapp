@@ -37,16 +37,53 @@ h2 {
 }
 
 .quize_ul .booking-card .book-container {
-  width: 40%;
+  position: relative;
+  width: 650px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .quize_ul .booking-card .book-container img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  display: block;
+  left: 1%;
+  top: 1%;
+  margin: auto;
+  width: 98%;
+  height: 98%;
   object-fit: cover;
+  z-index: 1;
+}
+.quize_ul .booking-card .book-container .border {
+  position: absolute;
+  display: block;
+  z-index: -9;
+  display: flex;
+  height: 200%;
+  width: 200%;
+  transform: rotate(-45deg);
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #fff 40%,
+    #ffb300 50%,
+    #f2b82f 55%,
+    #fff 70%,
+    #fff 100%
+  );
+  background-size: 200% auto;
+
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .quize_ul .booking-card .informations-container {
@@ -162,6 +199,14 @@ h2 {
   .quize_ul .booking-card .informations-container .more-information {
     opacity: 1;
   }
+  .quizebanner {
+    position: relative;
+    width: 100%;
+  }
+  .text_heading {
+    width: 100%;
+    flex-direction: column;
+  }
   .quizebanner .main_cont {
     flex-direction: column;
   }
@@ -170,6 +215,16 @@ h2 {
   }
   .devition_section img {
     object-fit: contain;
+  }
+  .quize_ul .booking-card .informations-container {
+    padding: 50px 0 0 0;
+    width: 95%;
+  }
+  .quize_ul .booking-card {
+    flex-direction: column;
+  }
+  .quize_ul .booking-card .book-container {
+    width: 95%;
   }
 }
 .credits {
